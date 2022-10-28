@@ -10,4 +10,19 @@
         android:name="com.raion.hunter.homepage.FragmentHomepage"
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" />
+    <fragment
+        android:id="@+id/fragmentMission"
+        android:name="com.raion.hunter.mission.FragmentMission"
+        android:label="FragmentMission"
+        tools:layout="@layout/fragment_mission"/>
+    <fragment
+        android:id="@+id/fragmentMap"
+        android:name="com.raion.hunter.map.FragmentMap"
+        android:label="FragmentMap"
+        tools:layout="@layout/fragment_map"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.raion.hunter.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
 </navigation>

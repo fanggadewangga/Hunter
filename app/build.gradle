@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.raion.hunter'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.raion.hunter"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
