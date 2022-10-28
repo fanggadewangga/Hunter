@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/textinput_confirm_password" />
 
     <ImageView
-        android:id="@+id/btn_signup"
+        android:id="@+id/btn_login"
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
@@ -101,7 +101,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_signup" />
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <ImageView
         android:id="@+id/btn_google"

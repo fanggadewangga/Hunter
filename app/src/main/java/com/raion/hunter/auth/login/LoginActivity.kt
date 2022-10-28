@@ -1,13 +1,11 @@
 package com.raion.hunter.auth.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.raion.hunter.R
+import androidx.appcompat.app.AppCompatActivity
 import com.raion.hunter.auth.signup.SignupActivity
-import com.raion.hunter.databinding.ActivityLandingBinding
 import com.raion.hunter.databinding.ActivityLoginBinding
-import com.raion.hunter.databinding.ActivitySignupBinding
+import com.raion.hunter.onboard.FirstOnboardActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -20,6 +18,11 @@ class LoginActivity : AppCompatActivity() {
             tvDaftar.setOnClickListener {
                 val intentToSignup = Intent(this@LoginActivity, SignupActivity::class.java)
                 startActivity(intentToSignup)
+            }
+
+            btnLogin.setOnClickListener {
+                val intentToOnboard = Intent(this@LoginActivity, FirstOnboardActivity::class.java)
+                startActivity(intentToOnboard)
             }
         }
     }
