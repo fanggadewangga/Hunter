@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".claim.ClaimFragment">
+
+    <!--TODO : Data Binding-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/iv_image_location"
+        android:layout_width="260dp"
+        android:layout_height="368dp"
+        android:layout_marginEnd="12dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.9"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:src="@{place.image}"
+                tools:src="@drawable/iv_kampung_warna" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/plusjakartadisplay_bold"
+                android:text="@{place.name}"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="Kampung Warna Warni" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/plusjakartatext_bold"
+        android:text="Anda berada pada wilayah wisata Kampung Warna Warni"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image_location" />
+
+    <TextView
+        android:id="@+id/tv_claim"
+        style="@style/caption"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/plusjakartatext_bold"
+        android:text="Klaim poinmu sekarang!"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/iv_image_location"
+        app:layout_constraintStart_toStartOf="@id/iv_image_location"
+        app:layout_constraintTop_toBottomOf="@id/tv_claim">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:src="@drawable/iv_btn_getcoins" />
+
+        <ImageView
+            android:layout_width="113dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:src="@drawable/iv_btn_claim" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
