@@ -7,234 +7,278 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".profile.ProfileFragment">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/iv_user_avatar"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="88dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".profile.ProfileFragment">
 
-            <FrameLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="88dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:alpha="0.9"
+                        android:importantForAccessibility="no"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/iv_user_avatar" />
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="bottom|end"
+                        android:src="@drawable/iv_crown_2" />
+
+                    <ImageView
+                        android:layout_width="74dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="top|start"
+                        android:src="@drawable/iv_crown_1" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="Hunter Widodo"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_user_avatar" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                style="@style/caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hunterwidodo@gmail.com"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <!--Account data-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/account_data"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="51dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_email">
+
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center"
-                    android:alpha="0.9"
-                    android:importantForAccessibility="no"
-                    android:scaleType="centerCrop"
-                    tools:src="@drawable/iv_user_avatar" />
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_account_data" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="64dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Data akun"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="bottom|end"
-                    android:src="@drawable/iv_crown_2" />
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_double_arrow" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <!--End of Account data-->
+
+            <!--Change password-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/change_password"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/account_data">
+
 
                 <ImageView
-                    android:layout_width="74dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="top|start"
-                    android:src="@drawable/iv_crown_1" />
-            </FrameLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_password" />
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Hunter Widodo"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_user_avatar" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="64dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Ubah password"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tv_email"
-            style="@style/caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hunterwidodo@gmail.com"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_double_arrow" />
+            </com.google.android.material.card.MaterialCardView>
+            <!--End of Change Password-->
 
-        <!--Account data-->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/account_data"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_email">
+            <!--Collection-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/collection"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change_password">
 
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_account_data" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_collection" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="64dp"
-                android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Data akun"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="64dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Koleksi"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_double_arrow" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_double_arrow" />
+            </com.google.android.material.card.MaterialCardView>
+            <!--End of Collection-->
 
-
-        </com.google.android.material.card.MaterialCardView>
-        <!--End of Account data-->
-
-        <!--Change password-->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/change_password"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/account_data">
+            <!--About App-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/about_app"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/collection">
 
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_password" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_about" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="64dp"
-                android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Ubah password"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="64dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Tentang aplikasi"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_double_arrow" />
-        </com.google.android.material.card.MaterialCardView>
-        <!--End of Change Password-->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_double_arrow" />
+            </com.google.android.material.card.MaterialCardView>
+            <!--End of About app-->
 
-        <!--About App-->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/about_app"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/change_password">
-
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_about" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="64dp"
-                android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Tentang aplikasi"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_double_arrow" />
-        </com.google.android.material.card.MaterialCardView>
-        <!--End of About app-->
-
-        <!--Terms-->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/terms"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_app">
+            <!--Terms-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/terms"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_app">
 
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_terms" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_terms" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="64dp"
-                android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Syarat dan ketentuan"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="64dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Syarat dan ketentuan"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_double_arrow" />
-        </com.google.android.material.card.MaterialCardView>
-        <!--End of Terms-->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_double_arrow" />
+            </com.google.android.material.card.MaterialCardView>
+            <!--End of Terms-->
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
