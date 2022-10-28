@@ -3,25 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/fragmentHomepage">
+    app:startDestination="@id/navigation_home">
 
     <fragment
-        android:id="@+id/fragmentHomepage"
+        android:id="@+id/navigation_home"
         android:name="com.raion.hunter.homepage.FragmentHomepage"
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" />
     <fragment
-        android:id="@+id/fragmentMission"
+        android:id="@+id/navigation_mission"
         android:name="com.raion.hunter.mission.FragmentMission"
         android:label="FragmentMission"
         tools:layout="@layout/fragment_mission"/>
     <fragment
-        android:id="@+id/fragmentMap"
+        android:id="@+id/navigation_map"
         android:name="com.raion.hunter.map.FragmentMap"
         android:label="FragmentMap"
-        tools:layout="@layout/fragment_map"/>
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="landmarkId"
+            app:argType="integer"/>
+    </fragment>
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/navigation_profile"
         android:name="com.raion.hunter.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>

@@ -6,7 +6,8 @@
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".map.FragmentMap">
@@ -17,5 +18,5 @@
             android:layout_height="match_parent"
             android:text="@string/hello_blank_fragment" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
