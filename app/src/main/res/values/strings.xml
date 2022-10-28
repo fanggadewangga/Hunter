@@ -3,4 +3,12 @@
     <string name="masuk"><u>Masuk</u></string>
     <string name="daftar"><u>Daftar</u></string>
     <string name="lupa_password"><u>Lupa password?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lokasi_kamu">Lokasi kamu</string>
+    <string name="poin_kamu">Poin Kamu</string>
+    <string name="tukar">Tukar</string>
+    <string name="artikel">Artikel</string>
+    <string name="bacaan_pariwisata_malang">Bacaan Pariwisata Malang</string>
+    <string name="recommendation_header">Rekomendasi tempat terdekat</string>
 </resources>

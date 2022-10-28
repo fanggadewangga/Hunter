@@ -1,77 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".onboard.SecondOnboardActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/iv_onboard"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="160dp"
-        android:src="@drawable/iv_app_logo_black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="304dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="72dp"
-        android:fontFamily="@font/plusjakartatext_bold"
-        android:text="Lorem ipsum dolor sit amet, consectetur ."
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_onboard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_onboard" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_subtitle"
-        style="@style/body2"
-        android:layout_width="304dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur ."
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/tv_title"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
-    <LinearLayout
-        android:id="@+id/indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".onboard.SecondOnboardActivity">
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginEnd="4dp"
-            android:src="@drawable/iv_circle_gray" />
+            android:id="@+id/iv_onboard"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/iv_app_logo_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/plusjakartatext_bold"
+            android:text="Lorem ipsum dolor sit amet, consectetur ."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_onboard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_onboard" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            style="@style/body2"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur ."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <LinearLayout
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/iv_circle_gray" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/iv_circle_black" />
+
+        </LinearLayout>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:src="@drawable/iv_circle_black" />
+            android:id="@+id/btn_explore"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/iv_btn_explore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indicator"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/btn_explore"
-        android:layout_width="175dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="64dp"
-        android:src="@drawable/iv_btn_explore"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/indicator" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
