@@ -15,11 +15,15 @@ class UserRepository(application: Application) {
         dao.insertUser(user)
     }
 
-    suspend fun selectUserById(uid: Int) {
-        dao.selectUser(uid)
+    suspend fun selectUserById(uid: Int): User? {
+        return dao.selectUser(uid)
     }
 
     suspend fun updateCoins(coins: Int, uid: Int) {
         dao.updateCoins(coins, uid)
+    }
+
+    suspend fun getAllUser(): List<User> {
+        return dao.getAllUser()
     }
 }

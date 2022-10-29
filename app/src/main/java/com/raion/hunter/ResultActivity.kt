@@ -1,13 +1,17 @@
 package com.raion.hunter
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.TimeUtils
+import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.raion.hunter.databinding.ActivityResultBinding
-import com.raion.hunter.map.FragmentMap
 import com.raion.hunter.util.GeofencingConstants
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ResultActivity : AppCompatActivity() {
 
@@ -31,8 +35,22 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
-        binding.claimButton.setOnClickListener {
-            // Claimed -> add user coins
+        val claimButtonListener = ClaimButtonListener {
+            lifecycleScope.launch {
+                binding.claimButtonText.visibility = View.GONE
+                binding.claimButtonProgress.visibility = View.VISIBLE
+                delay(2500)
+                binding.claimButtonProgress.visibility = View.GONE
+                binding.claimButtonChecked.visibility = View.VISIBLE
+                Toast.makeText(this@ResultActivity, "Koin berhasil diklaim", Toast.LENGTH_SHORT).show()
+                binding.claimButton.isClickable = false
+            }
         }
+
+        binding.claimListener = claimButtonListener
     }
+}
+
+class ClaimButtonListener(private val clickListener: () -> Unit) {
+    fun onClick() = clickListener()
 }

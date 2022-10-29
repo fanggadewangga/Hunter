@@ -2,10 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RedeemFragment">
+    tools:context=".redeem.RedeemFragment">
 
     <data>
-
+        <variable
+            name="user"
+            type="com.raion.hunter.dto.User" />
     </data>
 
     <ScrollView
@@ -53,9 +55,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="72dp"
                 android:fontFamily="@font/plusjakartatext_bold"
-                android:text="500"
+                android:text="@{user.coins}"
                 android:textColor="@color/white"
                 android:textSize="36sp"
+                tools:text="500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_back" />

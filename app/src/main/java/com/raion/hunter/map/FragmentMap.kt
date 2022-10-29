@@ -185,11 +185,11 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
 
         geofencingClient.removeGeofences(geofencePendingIntent).run {
             addOnSuccessListener {
-                Log.d(TAG, getString(R.string.geofences_removed))
+                Log.d(TAG, "Geofences Removed")
             }
 
             addOnFailureListener {
-                Log.d(TAG, getString(R.string.geofences_not_removed))
+                Log.d(TAG, "Geofences not removed")
             }
         }
     }
@@ -306,6 +306,10 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
         } else {
             requestPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION))
         }
+    }
+
+    private fun getDirection() {
+
     }
 }
 

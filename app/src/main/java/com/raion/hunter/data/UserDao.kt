@@ -12,9 +12,12 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(user: User)
 
-    @Query("SELECT * FROM user WHERE name = :uid")
+    @Query("SELECT * FROM user WHERE uid = :uid")
     suspend fun selectUser(uid: Int): User?
 
     @Query("UPDATE user SET coins = :newCoins WHERE uid = :uid")
     suspend fun updateCoins(newCoins : Int, uid: Int )
+
+    @Query("SELECT * FROM user")
+    suspend fun getAllUser(): List<User>
 }

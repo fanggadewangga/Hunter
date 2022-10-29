@@ -52,7 +52,6 @@ class FragmentHomepage : Fragment() {
 
         getLastLocation()
 
-
         return binding.root
     }
 

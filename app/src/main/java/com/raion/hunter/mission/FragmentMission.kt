@@ -27,7 +27,7 @@ class FragmentMission : Fragment() {
             findNavController().navigate(FragmentMissionDirections.actionNavigationMissionToLocationDetailFragment(placeId))
         })
 
-        adapter.submitList(DummyPlace.getData(requireContext()))
+        adapter.submitList(DummyPlace.getData(requireContext()).shuffled())
         binding.missionRecommendationRv.adapter = adapter
 
 

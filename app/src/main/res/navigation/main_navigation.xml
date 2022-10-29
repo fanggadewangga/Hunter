@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_locationDetailFragment"
             app:destination="@id/locationDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_redeemFragment"
+            app:destination="@id/redeemFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_mission"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_mission_to_locationDetailFragment"
             app:destination="@id/locationDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_mission_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_map"
@@ -54,4 +60,24 @@
         android:name="com.raion.hunter.explore.ExploreFragment"
         android:label="ExploreFragment"
         tools:layout="@layout/fragment_explore"/>
+    <fragment
+        android:id="@+id/redeemFragment"
+        android:name="com.raion.hunter.redeem.RedeemFragment"
+        android:label="fragment_redeem"
+        tools:layout="@layout/fragment_redeem" />
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.raion.hunter.leaderboard.LeaderboardFragment"
+        android:label="LeaderboardFragment"
+        tools:layout="@layout/fragment_leaderboard"/>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.raion.hunter.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.raion.hunter.article.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
 </navigation>
