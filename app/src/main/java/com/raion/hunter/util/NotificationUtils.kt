@@ -8,9 +8,11 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.raion.hunter.MainActivity
 import com.raion.hunter.R
+import com.raion.hunter.ResultActivity
 
 fun createChannel(context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -35,8 +37,10 @@ fun createChannel(context: Context) {
 }
 
 fun NotificationManager.sendGeofenceEnteredNotification(context: Context, fenceId: String) {
-    val contentIntent = Intent(context, MainActivity::class.java)
+    val contentIntent = Intent(context, ResultActivity::class.java)
+    Log.d("Notification", "Fence Id: $fenceId")
     contentIntent.putExtra(GeofencingConstants.EXTRA_GEOFENCE, fenceId)
+        .flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
     val place = GeofencingConstants.getLandmarkData(context).first {
         it.id == fenceId
     }
@@ -44,7 +48,7 @@ fun NotificationManager.sendGeofenceEnteredNotification(context: Context, fenceI
         context,
         NOTIFICATION_ID,
         contentIntent,
-        PendingIntent.FLAG_UPDATE_CURRENT
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
     )
     val mapImage = BitmapFactory.decodeResource(
         context.resources,

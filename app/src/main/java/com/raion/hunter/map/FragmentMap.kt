@@ -163,7 +163,7 @@ class FragmentMap : Fragment() {
     }
 
 
-    private fun removeGeofences() {
+    fun removeGeofences() {
         if (!foregroundAndBackgroundLocationPermissionApproved()) {
             return
         }

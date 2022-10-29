@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".claim.ClaimFragment">
+        tools:context=".ResultActivity">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/iv_image_location"
@@ -60,7 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Anda berada pada wilayah wisata Kampung Warna Warni"
+            android:text="@{String.format(@string/arrived_result_text, place.name)}"
+            tools:text="Anda berada pada wilayah wisata Kampung Warna Warni"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -98,6 +99,7 @@
                 android:src="@drawable/iv_btn_getcoins" />
 
             <ImageView
+                android:id="@+id/claim_button"
                 android:layout_width="113dp"
                 android:layout_height="56dp"
                 android:clickable="true"

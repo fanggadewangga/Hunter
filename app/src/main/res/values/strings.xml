@@ -50,4 +50,5 @@
     <string name="geofences_not_added">Problem in adding geofences.</string>
     <string name="insufficient_permissions">Insufficient permissions.</string>
     <string name="geofence_error">There was an error in finding your treasure</string>
+    <string name="arrived_result_text">Anda berada pada wilayah wisata %s</string>
 </resources>
