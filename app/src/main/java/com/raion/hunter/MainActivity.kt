@@ -40,9 +40,6 @@ class MainActivity : AppCompatActivity() {
         val userRepository = UserRepository(application)
 
         lifecycleScope.launch(Dispatchers.IO) {
-//            First Time Insert
-//            Log.d("Insert First", "INSERTED")
-//            userRepository.insertUser(User(null, "Gabriel", 5000))
             val tempUser = userRepository.selectUserById(1)
             tempUser?.let {
                 withContext(Dispatchers.Main) {
