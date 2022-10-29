@@ -1,11 +1,13 @@
 package com.raion.hunter.util
 
 import android.content.Context
+import androidx.core.content.ContextCompat
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofenceStatusCodes
 import com.google.android.gms.maps.model.LatLng
 import com.raion.hunter.R
 import com.raion.hunter.dto.Place
+import com.raion.hunter.dto.PlaceRecommendation
 import java.util.concurrent.TimeUnit
 
 fun errorMessage(context: Context, errorCode: Int): String {
@@ -32,30 +34,34 @@ internal object GeofencingConstants {
      */
     val GEOFENCE_EXPIRATION_IN_MILLISECONDS: Long = TimeUnit.HOURS.toMillis(1)
 
-    val LANDMARK_DATA = arrayOf(
+    fun getLandmarkData(context: Context): ArrayList<Place> = arrayListOf(
         Place(
             "kost_cappadocia",
             "Kost Griya Cappadocia",
             "Dummy Description for testing only",
-            LatLng(-7.9499, 112.6172)
+            LatLng(-7.9499, 112.6172),
+            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
         ),
         Place(
             "universitas_brawijaya",
             "Universitas Brawijaya",
             "The University of Brawijaya, was established on 5 January 1963 and located in Malang. It is an autonomous state university in Indonesia",
-            LatLng(-7.952635, 112.6121814)
+            LatLng(-7.952635, 112.6121814),
+            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
         ),
         Place(
             "sendang_biru",
             "Pantai Sendang Biru",
             "Pantai Sendang Biru merupakan salah satu pantai yang terletak di Desa Sumber Agung, Kecamatan Sumber Manjing Wetan, 69 km ke arah selatan dari pusat Kota Malang",
-            LatLng(-8.4322221, 112.6841667)
+            LatLng(-8.4322221, 112.6841667),
+            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
         ),
         Place(
             "balekambang",
             "Balekambang Beach",
             "A temple is reached by a small wooden bridge at high tide at this sandy beach with water activities.",
-            LatLng(-8.4035603, 112.534983)
+            LatLng(-8.4035603, 112.534983),
+            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
         )
     )
 

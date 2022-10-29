@@ -36,14 +36,14 @@
     </string>
 
     <!--    Geofence Status Strings-->
-    <string name="geofences_added">Clue Geofence added.</string>
+    <string name="geofences_added">Geofence for %s activated.</string>
     <string name="geofences_removed">Geofences removed.</string>
     <string name="geofence_entered">Geofence entered.</string>
     <string name="geofence_over">You have found the treasure! Congratulations!</string>
 
     <!-- Notification Strings-->
     <string name="channel_name">GeofenceStatus</string>
-    <string name="content_text">You have arrived.</string>
+    <string name="content_text">Yey!! Kamu sedang berada di %s klaim poinmu sekarang.</string>
     <string name="notification_channel_description">Geofence status notification</string>
 
     <string name="geofences_not_removed">Geofences not removed.</string>

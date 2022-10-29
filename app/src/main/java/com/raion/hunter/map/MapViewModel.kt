@@ -18,9 +18,6 @@ class MapViewModel(private val state: SavedStateHandle): ViewModel() {
         state[GEOFENCE_STATUS_KEY] = true
         Log.d("MapViewModel", "Geofence activated")
     }
-
-    val _onNewIntent = MutableLiveData<Intent>()
 }
 
-private const val HINT_INDEX_KEY = "hintIndex"
 private const val GEOFENCE_STATUS_KEY = "geofenceActive"

@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.raion.hunter.homepage.FragmentHomepage"
         android:label="fragment_homepage"
-        tools:layout="@layout/fragment_homepage" />
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_navigation_home_to_claimFragment"
+            app:destination="@id/claimFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_mission"
         android:name="com.raion.hunter.mission.FragmentMission"
@@ -23,10 +27,22 @@
         <argument
             android:name="landmarkId"
             app:argType="integer"/>
+        <action
+            android:id="@+id/action_navigation_map_to_claimFragment"
+            app:destination="@id/claimFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.raion.hunter.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/claimFragment"
+        android:name="com.raion.hunter.claim.ClaimFragment"
+        android:label="ClaimFragment"
+        tools:layout="@layout/fragment_claim">
+        <argument
+            android:name="placeId"
+            app:argType="string" />
+    </fragment>
 </navigation>

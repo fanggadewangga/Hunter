@@ -37,6 +37,9 @@ fun createChannel(context: Context) {
 fun NotificationManager.sendGeofenceEnteredNotification(context: Context, fenceId: String) {
     val contentIntent = Intent(context, MainActivity::class.java)
     contentIntent.putExtra(GeofencingConstants.EXTRA_GEOFENCE, fenceId)
+    val place = GeofencingConstants.getLandmarkData(context).first {
+        it.id == fenceId
+    }
     val contentPendingIntent = PendingIntent.getActivity(
         context,
         NOTIFICATION_ID,
@@ -55,7 +58,7 @@ fun NotificationManager.sendGeofenceEnteredNotification(context: Context, fenceI
     // a custom message when a Geofence triggers.
     val builder = NotificationCompat.Builder(context, CHANNEL_ID)
         .setContentTitle(context.getString(R.string.app_name))
-        .setContentText(context.getString(R.string.content_text))
+        .setContentText(context.getString(R.string.content_text, place.name))
         .setPriority(NotificationCompat.PRIORITY_HIGH)
         .setContentIntent(contentPendingIntent)
         .setSmallIcon(R.drawable.map_small)

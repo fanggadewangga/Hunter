@@ -19,6 +19,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.material.snackbar.Snackbar
@@ -36,7 +37,7 @@ class FragmentMap : Fragment() {
     private lateinit var viewModel: MapViewModel
     private lateinit var geofencingClient: GeofencingClient
     private lateinit var place: Place
-    private val geofenceList = mutableListOf<Geofence>()
+    private lateinit var geofence: Geofence
 
     private val deviceQLater = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q
 
@@ -66,30 +67,12 @@ class FragmentMap : Fragment() {
         binding = FragmentMapBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[MapViewModel::class.java]
 
-        place = GeofencingConstants.LANDMARK_DATA[arguments?.getInt("landmarkIndex")!!]
-
-        viewModel._onNewIntent.observe(viewLifecycleOwner) {
-            onNewIntent(it)
-        }
-
-        GeofencingConstants.LANDMARK_DATA.forEach { place ->
-            geofenceList.add(buildGeofence(place))
-        }
+        place = GeofencingConstants.getLandmarkData(requireContext())[arguments?.getInt("landmarkIndex")!!]
+        geofence = buildGeofence(place)
 
         createChannel(requireContext())
 
         return binding.root
-    }
-
-    private fun onNewIntent(intent: Intent?) {
-        val extras = intent?.extras
-        if (extras != null) {
-            if (extras.containsKey(GeofencingConstants.EXTRA_GEOFENCE)) {
-                Toast.makeText(requireContext(), "Pressed Notification on fence ${extras.getString(GeofencingConstants.EXTRA_GEOFENCE)}", Toast.LENGTH_SHORT).show()
-                Log.d(TAG, "On new intent")
-                checkPermissionsAndStartGeofencing()
-            }
-        }
     }
 
     private fun checkPermissionsAndStartGeofencing() {
@@ -108,7 +91,7 @@ class FragmentMap : Fragment() {
     private fun getGeofencingRequest(): GeofencingRequest {
         return GeofencingRequest.Builder().apply {
             setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
-            addGeofences(geofenceList)
+            addGeofence(geofence)
         }.build()
     }
 
@@ -159,7 +142,7 @@ class FragmentMap : Fragment() {
                 geofencingClient.addGeofences(getGeofencingRequest(), geofencePendingIntent).run {
                     addOnSuccessListener {
                         Log.d(TAG, "Adding Success")
-                        Toast.makeText(requireContext(), R.string.geofences_added, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), getString(R.string.geofences_added, place.name), Toast.LENGTH_SHORT).show()
                         viewModel.geofenceActivated()
                     }
                     addOnFailureListener {
@@ -194,43 +177,6 @@ class FragmentMap : Fragment() {
             addOnFailureListener {
                 Log.d(TAG, getString(R.string.geofences_not_removed))
             }
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        Log.d(TAG, "On Request Permission Result")
-        if (grantResults.isEmpty() ||
-            grantResults[LOCATION_PERMISSION_INDEX] == PackageManager.PERMISSION_DENIED ||
-            (requestCode == REQUEST_FOREGROUND_AND_BACKGROUND_PERMISSION_RESULT_CODE &&
-                    grantResults[BACKGROUND_LOCATION_PERMISSION_INDEX] == PackageManager.PERMISSION_DENIED)
-        ) {
-            // Permission Denied
-            Log.d(TAG, "Asking Permission Denied")
-            Snackbar.make(
-                binding.mapFragment,
-                R.string.permission_denied_explanation,
-                Snackbar.LENGTH_INDEFINITE
-            )
-                .setAction(
-                    R.string.settings
-                ) {
-                    startActivity(
-                        Intent().apply {
-                            action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                            data = Uri.fromParts("package", BuildConfig.APPLICATION_ID, null)
-                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                        }
-                    )
-                }
-                .show()
-        } else {
-            Log.d(TAG, "On request permission result Approved")
-            checkDeviceLocationSettingsAndStartGeofence()
         }
     }
 
@@ -321,5 +267,3 @@ private const val REQUEST_FOREGROUND_AND_BACKGROUND_PERMISSION_RESULT_CODE = 33
 private const val REQUEST_FOREGROUND_ONLY_PERMISSIONS_REQUEST_CODE = 34
 private const val REQUEST_TURN_DEVICE_LOCATION_ON = 29
 private const val TAG = "MapFragment"
-private const val LOCATION_PERMISSION_INDEX = 0
-private const val BACKGROUND_LOCATION_PERMISSION_INDEX = 1
