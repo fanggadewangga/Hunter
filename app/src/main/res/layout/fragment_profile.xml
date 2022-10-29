@@ -48,7 +48,7 @@
                         android:alpha="0.9"
                         android:importantForAccessibility="no"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/iv_user_avatar" />
+                        android:src="@drawable/iv_user_avatar" />
 
                     <ImageView
                         android:layout_width="54dp"
