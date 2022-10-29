@@ -40,28 +40,42 @@ internal object GeofencingConstants {
             "Kost Griya Cappadocia",
             "Dummy Description for testing only",
             LatLng(-7.9499, 112.6172),
-            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
+            ContextCompat.getDrawable(context, R.drawable.iv_kost_griya)!!
+        ),
+        Place(
+            "kampung_warna",
+            "Kampung Warna Warni",
+            "Kampung Warna Warni Jodipan menjadi salah satu tempat wisata unik dan favorit di Kota Malang. Rumah-rumah di Kampung Jodipan ini di cat warna-warni. Terlihat indah dan menjunjung tinggi nilai seni.",
+            LatLng(-7.9835106, 112.6357529),
+            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna_warni)!!
         ),
         Place(
             "universitas_brawijaya",
             "Universitas Brawijaya",
             "The University of Brawijaya, was established on 5 January 1963 and located in Malang. It is an autonomous state university in Indonesia",
             LatLng(-7.952635, 112.6121814),
-            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
+            ContextCompat.getDrawable(context, R.drawable.iv_ub)!!
         ),
         Place(
             "sendang_biru",
             "Pantai Sendang Biru",
             "Pantai Sendang Biru merupakan salah satu pantai yang terletak di Desa Sumber Agung, Kecamatan Sumber Manjing Wetan, 69 km ke arah selatan dari pusat Kota Malang",
             LatLng(-8.4322221, 112.6841667),
-            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
+            ContextCompat.getDrawable(context, R.drawable.iv_sendang_biru)!!
         ),
         Place(
             "balekambang",
             "Balekambang Beach",
             "A temple is reached by a small wooden bridge at high tide at this sandy beach with water activities.",
             LatLng(-8.4035603, 112.534983),
-            ContextCompat.getDrawable(context, R.drawable.iv_kampung_warna)!!
+            ContextCompat.getDrawable(context, R.drawable.balekambang)!!
+        ),
+        Place(
+            "alun_alun_malang",
+            "Alun Alun Kota Malang",
+            "Popular square in the heart of downtown featuring shade trees, walking paths & a central fountain",
+            LatLng(-7.9826092, 112.6286173),
+            ContextCompat.getDrawable(context, R.drawable.iv_alun_alun_malang)!!
         )
     )
 

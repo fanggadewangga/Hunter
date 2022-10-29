@@ -1,112 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".location_detail.LocationDetailFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!--TODO : MAP VIEW & DATA RECYCLER VIEW-->
+    <data>
+        <variable
+            name="place"
+            type="com.raion.hunter.dto.Place" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/top_section"
         android:layout_width="match_parent"
-        android:layout_height="390dp"
-        android:background="@drawable/iv_kampung_warna_warni"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".location_detail.LocationDetailFragment">
 
-        <ImageView
-            android:id="@+id/iv_arrow_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="56dp"
-            android:src="@drawable/iv_arrow_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Rincian Lokasi"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_arrow_back"
-            app:layout_constraintStart_toEndOf="@id/iv_arrow_back"
-            app:layout_constraintTop_toTopOf="@id/iv_arrow_back" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="420dp"
-        android:background="@drawable/bg_rounded_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
+        <!--TODO : MAP VIEW & DATA RECYCLER VIEW-->
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_section"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="390dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_location_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@{place.image}"
+                tools:src="@drawable/iv_kampung_warna_warni"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="56dp"
-                android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Kampung Warna Warni"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:src="@drawable/iv_arrow_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <TextView
-                android:id="@+id/tv_location_description"
-                style="@style/body2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="16dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sit quam velit, morbi amet, neque. Non mattis porttitor ornare ac facilisi pulvinar. Facilisi congue pulvinar quis id viverra enim ut facilisis. "
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/tv_location_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_location_name" />
-
-            <TextView
-                android:id="@+id/tv_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
                 android:fontFamily="@font/plusjakartatext_bold"
-                android:text="Review"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_location_description" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/tv_review"
-                app:layout_constraintTop_toBottomOf="@id/tv_review" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="360dp"
-                android:src="@drawable/iv_map"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+                android:text="Rincian Lokasi"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_arrow_back"
+                app:layout_constraintStart_toEndOf="@id/iv_arrow_back"
+                app:layout_constraintTop_toTopOf="@id/iv_arrow_back" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:background="@drawable/bg_rounded_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_location_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="56dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    tools:text="Kampung Warna Warni"
+                    android:text="@{place.name}"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_location_description"
+                    style="@style/body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{place.description}"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sit quam velit, morbi amet, neque. Non mattis porttitor ornare ac facilisi pulvinar. Facilisi congue pulvinar quis id viverra enim ut facilisis. "
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/tv_location_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_location_name" />
+
+                <TextView
+                    android:id="@+id/tv_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/plusjakartatext_bold"
+                    android:text="Review"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_location_description" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_review"
+                    app:layout_constraintTop_toBottomOf="@id/tv_review" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:src="@drawable/iv_map"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/visit_place_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kunjungi Lokasi"
+                    app:cornerRadius="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/map_view"
+                    android:layout_marginTop="18dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

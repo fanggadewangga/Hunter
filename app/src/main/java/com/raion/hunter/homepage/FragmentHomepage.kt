@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.raion.hunter.R
 import com.raion.hunter.databinding.FragmentHomepageBinding
 import com.raion.hunter.dto.DummyPlace
@@ -20,7 +21,9 @@ class FragmentHomepage : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomepageBinding.inflate(layoutInflater)
 
-        val adapter = PlaceRecommendationAdapter()
+        val adapter = PlaceRecommendationAdapter(PlaceRecommendationListener { placeId ->
+            findNavController().navigate(FragmentHomepageDirections.actionNavigationHomeToLocationDetailFragment(placeId))
+        })
         adapter.submitList(DummyPlace.getData(requireContext()))
         binding.placeRecommendationRv.adapter = adapter
 

@@ -7,13 +7,17 @@
         <variable
             name="place"
             type="com.raion.hunter.dto.PlaceRecommendation" />
+        <variable
+            name="listener"
+            type="com.raion.hunter.homepage.PlaceRecommendationListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="200dp"
         android:layout_height="275dp"
         app:cardCornerRadius="12dp"
-        android:layout_marginEnd="12dp">
+        android:layout_marginEnd="12dp"
+        android:onClick="@{() -> listener.onClick(place.id)}">
 
         <FrameLayout
             android:layout_width="match_parent"

@@ -9,24 +9,44 @@
         android:id="@+id/navigation_home"
         android:name="com.raion.hunter.homepage.FragmentHomepage"
         android:label="fragment_homepage"
-        tools:layout="@layout/fragment_homepage" />
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_navigation_home_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_mission"
         android:name="com.raion.hunter.mission.FragmentMission"
         android:label="FragmentMission"
-        tools:layout="@layout/fragment_mission"/>
+        tools:layout="@layout/fragment_mission">
+        <action
+            android:id="@+id/action_navigation_mission_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_map"
         android:name="com.raion.hunter.map.FragmentMap"
         android:label="FragmentMap"
         tools:layout="@layout/fragment_map">
         <argument
-            android:name="landmarkId"
-            app:argType="integer"/>
+            android:name="placeId"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.raion.hunter.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/locationDetailFragment"
+        android:name="com.raion.hunter.location_detail.LocationDetailFragment"
+        android:label="LocationDetailFragment"
+        tools:layout="@layout/fragment_location_detail">
+        <argument
+            android:name="placeId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_locationDetailFragment_to_navigation_map"
+            app:destination="@id/navigation_map" />
+    </fragment>
 </navigation>

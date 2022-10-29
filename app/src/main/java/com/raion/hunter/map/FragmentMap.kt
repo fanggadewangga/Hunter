@@ -48,12 +48,6 @@ class FragmentMap : Fragment() {
         PendingIntent.getBroadcast(requireContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        geofencingClient = LocationServices.getGeofencingClient(requireActivity())
-        Log.d(TAG, "Instantiating geofencing client")
-    }
-
     override fun onStart() {
         super.onStart()
         checkPermissionsAndStartGeofencing()
@@ -67,8 +61,11 @@ class FragmentMap : Fragment() {
         binding = FragmentMapBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[MapViewModel::class.java]
 
-        place = GeofencingConstants.getLandmarkData(requireContext())[arguments?.getInt("landmarkIndex")!!]
+        place = GeofencingConstants.getLandmarkData(requireContext()).first {
+            it.id == arguments?.getString("placeId")
+        }
         geofence = buildGeofence(place)
+        geofencingClient = LocationServices.getGeofencingClient(requireActivity())
 
         createChannel(requireContext())
 

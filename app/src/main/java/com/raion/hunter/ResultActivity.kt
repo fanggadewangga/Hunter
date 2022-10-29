@@ -28,7 +28,6 @@ class ResultActivity : AppCompatActivity() {
                     it.id == placeId
                 }
                 binding.place = place
-                FragmentMap().removeGeofences()
             }
         }
 

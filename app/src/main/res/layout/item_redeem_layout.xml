@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <View
-            android:id="@+id/orange_bg"
+            android:id="@+id/orange_bg_1"
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:background="@color/orange"
@@ -44,7 +44,7 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@id/tv_item_point"
-            app:layout_constraintStart_toEndOf="@id/orange_bg"
+            app:layout_constraintStart_toEndOf="@id/orange_bg_1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
