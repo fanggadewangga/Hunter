@@ -49,4 +49,9 @@
             android:id="@+id/action_locationDetailFragment_to_navigation_map"
             app:destination="@id/navigation_map" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_explore"
+        android:name="com.raion.hunter.explore.ExploreFragment"
+        android:label="ExploreFragment"
+        tools:layout="@layout/fragment_explore"/>
 </navigation>

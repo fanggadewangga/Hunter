@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".mission.FragmentMission"
-        android:background="@color/blue"
-        android:paddingTop="16dp">
+        android:background="@color/blue">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/back_button_mission"
@@ -22,6 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:fabCustomSize="42dp"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@color/white"
             android:src="@drawable/ic_arrow_left"/>
 
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_scan"
-                    android:tint="@color/blue"
+                    app:tint="@color/blue"
                     android:importantForAccessibility="no"/>
 
                 <TextView
@@ -147,6 +147,7 @@
                 android:layout_marginTop="16dp"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
+                android:paddingBottom="24dp"
                 android:clipToPadding="false"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
