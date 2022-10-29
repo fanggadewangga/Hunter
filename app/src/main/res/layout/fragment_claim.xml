@@ -29,8 +29,7 @@
                 android:alpha="0.9"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
-                android:src="@{place.image}"
-                tools:src="@drawable/iv_kampung_warna" />
+                tools:src="@drawable/iv_kampung_warna_warni" />
 
             <TextView
                 android:layout_width="match_parent"

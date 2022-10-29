@@ -14,8 +14,10 @@ class SecondOnboardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-            val intentToMain = Intent(this@SecondOnboardActivity, MainActivity::class.java)
-            startActivity(intentToMain)
+            btnExplore.setOnClickListener {
+                val intentToMain = Intent(this@SecondOnboardActivity, MainActivity::class.java)
+                startActivity(intentToMain)
+            }
         }
     }
 }

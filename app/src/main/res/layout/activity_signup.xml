@@ -18,7 +18,7 @@
             android:layout_width="88dp"
             android:layout_height="120dp"
             android:layout_marginTop="80dp"
-            android:src="@drawable/iv_app_logo_black"
+            android:src="@drawable/iv_app_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="32dp"
             android:clickable="true"
-            android:src="@drawable/iv_button_signup"
+            android:src="@drawable/iv_btn_signup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textinput_confirm_password" />
@@ -157,7 +157,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:clickable="true"
-            android:src="@drawable/iv_btn_google"
+            android:src="@drawable/iv_btn_google_orange"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/masuk"
                 android:clickable="true"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textStyle="bold" />
         </LinearLayout>
 

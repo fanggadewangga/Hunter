@@ -16,6 +16,17 @@
             android:layout_height="match_parent"
             tools:context=".profile.ProfileFragment">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="Profile"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/iv_user_avatar"
                 android:layout_width="170dp"
@@ -84,7 +95,7 @@
                 android:layout_height="51dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +137,7 @@
                 android:layout_height="51dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +177,7 @@
                 android:layout_height="51dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -206,7 +217,7 @@
                 android:layout_height="51dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +257,7 @@
                 android:layout_height="51dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

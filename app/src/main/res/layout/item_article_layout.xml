@@ -32,7 +32,6 @@
                 android:alpha="0.9"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
-                android:src="@{place.image}"
                 tools:src="@drawable/iv_tugu_malang" />
         </com.google.android.material.card.MaterialCardView>
 

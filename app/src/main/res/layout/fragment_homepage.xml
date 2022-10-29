@@ -61,7 +61,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/iv_tugu_malang"
+                    android:src="@drawable/iv_user_avatar"
                     android:scaleType="centerCrop"
                     android:importantForAccessibility="no" />
 
@@ -82,7 +82,7 @@
                 android:id="@+id/poin_container"
                 android:layout_width="match_parent"
                 android:layout_height="124dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@id/location_text"
                 android:layout_marginTop="24dp">
@@ -113,7 +113,7 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="#7E7E7E"
+                        android:backgroundTint="@color/orange"
                         android:layout_alignParentEnd="true"
                         android:text="@string/tukar"
                         android:textAllCaps="false"
@@ -129,7 +129,7 @@
                 android:id="@+id/article_container"
                 android:layout_width="match_parent"
                 android:layout_height="124dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/orange"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@id/poin_container"
                 android:layout_marginTop="12dp">
@@ -182,7 +182,7 @@
                 app:layout_constraintTop_toBottomOf="@id/article_container"
                 style="@style/h2"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:layout_marginTop="12dp" />
 
             <androidx.recyclerview.widget.RecyclerView

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.raion.hunter.auth.signup.SignupActivity
 import com.raion.hunter.databinding.ActivityLoginBinding
 import com.raion.hunter.onboard.FirstOnboardActivity
+import com.raion.hunter.onboard.SecondOnboardActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -21,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             btnLogin.setOnClickListener {
-                val intentToOnboard = Intent(this@LoginActivity, FirstOnboardActivity::class.java)
+                val intentToOnboard = Intent(this@LoginActivity, SecondOnboardActivity::class.java)
                 startActivity(intentToOnboard)
             }
         }
