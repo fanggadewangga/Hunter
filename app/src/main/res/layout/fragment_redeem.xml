@@ -2,12 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".RedeemFragment">
 
     <data>
-
 
     </data>
 
@@ -91,7 +88,7 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/orange_bg"
+                        android:id="@+id/orange_bg_1"
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
@@ -120,7 +117,7 @@
                         android:text="Topi mafia"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_1"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -132,7 +129,7 @@
                         android:layout_marginTop="36dp"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_1"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -163,14 +160,13 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/orange_bg"
+                        android:id="@+id/orange_bg_2"
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="DuplicateIds" />
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
                         style="@style/h6"
@@ -195,7 +191,7 @@
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toTopOf="@id/tv_item_point"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_2"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -239,7 +235,7 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/orange_bg"
+                        android:id="@+id/orange_bg_3"
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
@@ -269,7 +265,7 @@
                         android:text="Mahkota raja"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_3"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -281,7 +277,7 @@
                         android:layout_marginTop="36dp"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_3"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -312,7 +308,7 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/orange_bg"
+                        android:id="@+id/orange_bg_4"
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
@@ -342,7 +338,7 @@
                         android:text="Topi badut"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_4"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -354,7 +350,7 @@
                         android:layout_marginTop="36dp"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        app:layout_constraintStart_toEndOf="@id/orange_bg"
+                        app:layout_constraintStart_toEndOf="@id/orange_bg_4"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
