@@ -14,10 +14,10 @@
 
         <ImageView
             android:id="@+id/iv_onboard"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="160dp"
-            android:src="@drawable/iv_app_logo_black"
+            android:layout_width="304dp"
+            android:layout_height="334dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/iv_onboard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,9 +27,9 @@
             android:layout_width="304dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="48dp"
             android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Lorem ipsum dolor sit amet, consectetur ."
+            android:text="Kunjungi wisata terdekatmu"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/iv_onboard"
@@ -42,33 +42,11 @@
             android:layout_width="304dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur ."
+            android:text="Kumpulkan poin sebanyak mungkin dan dapatkan koleksi menarik."
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-        <LinearLayout
-            android:id="@+id/indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/iv_circle_gray" />
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/iv_circle_black" />
-
-        </LinearLayout>
 
         <ImageView
             android:id="@+id/btn_explore"
@@ -79,7 +57,7 @@
             android:src="@drawable/iv_btn_explore"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indicator"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,13 +17,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/iv_arrow_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="56dp"
-            android:src="@drawable/iv_circle_back_arrow"
+            android:src="@drawable/iv_arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/plusjakartatext_bold"
+            android:text="Rincian Lokasi"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_arrow_back"
+            app:layout_constraintStart_toEndOf="@id/iv_arrow_back"
+            app:layout_constraintTop_toTopOf="@id/iv_arrow_back" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView

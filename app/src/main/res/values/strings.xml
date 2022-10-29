@@ -11,7 +11,8 @@
     <string name="artikel">Artikel</string>
     <string name="bacaan_pariwisata_malang">Bacaan Pariwisata Malang</string>
     <string name="recommendation_header">Rekomendasi tempat terdekat</string>
-    <string name="lihat_selengkapnya"><u>Lihat selengkapnya</u></string><string name="misi">Misi</string>
+    <string name="lihat_selengkapnya"><u>Lihat selengkapnya</u></string>
+    <string name="misi">Misi</string>
     <string name="peringkatmu">Peringkatmu \n<big><big><big><b>Ke-100</b></big></big></big></string>
     <string name="scan_dan_dapatkan_poin">Scan dan dapatkan poin</string>
     <string name="mission_recommendation_title">Ayo kunjungi lokasi berikut!</string>
@@ -31,8 +32,7 @@
         You need to grant location permission in order to play this game.
     </string>
     <string name="settings">Settings</string>
-    <string
-        name="location_setting_off">Please turn on device location in Settings and try again.
+    <string name="location_setting_off">Please turn on device location in Settings and try again.
     </string>
 
     <!--    Geofence Status Strings-->
