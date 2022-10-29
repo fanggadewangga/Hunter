@@ -10,6 +10,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.raion.hunter.MainActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.raion.hunter.R
 import com.raion.hunter.data.UserRepository
 import com.raion.hunter.databinding.FragmentRedeemBinding
@@ -19,8 +21,9 @@ import kotlinx.coroutines.withContext
 
 class RedeemFragment : Fragment() {
 
-    private lateinit var binding: FragmentRedeemBinding
     private lateinit var viewmodel: RedeemViewmodel
+    private lateinit var binding: FragmentRedeemBinding
+    private lateinit var bottomSheet: BottomSheetBehavior<ConstraintLayout>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +35,25 @@ class RedeemFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.viewmodel = viewmodel
+
+        bottomSheet = BottomSheetBehavior.from(binding.bottomSheetRedeem).apply {
+            expandedOffset = 120
+            peekHeight = 640
+            isFitToContents = false
+
+            addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+                override fun onStateChanged(bottomSheet: View, newState: Int) {
+                    if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
+
+                    }
+                }
+
+                override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                    TODO("Not yet implemented")
+                }
+            }
+            )
+        }
 
         return binding.root
     }
