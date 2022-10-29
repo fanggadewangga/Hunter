@@ -86,4 +86,9 @@ dependencies {
     // Code Scanner
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
 
+    // LiveData
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 }
