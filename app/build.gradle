@@ -29,6 +29,7 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -76,5 +77,13 @@ dependencies {
 
     // Circle Image View
     implementation "de.hdodenhof:circleimageview:3.1.0"
+
+    // CameraX
+    implementation "androidx.camera:camera-camera2:1.1.0"
+    implementation "androidx.camera:camera-lifecycle:1.1.0"
+    implementation "androidx.camera:camera-view:1.1.0"
+
+    // Code Scanner
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
 
 }
