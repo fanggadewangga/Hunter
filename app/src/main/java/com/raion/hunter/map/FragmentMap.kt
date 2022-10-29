@@ -18,10 +18,16 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.PermissionChecker
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.raion.hunter.BuildConfig
 import com.raion.hunter.R
@@ -31,13 +37,15 @@ import com.raion.hunter.util.GeofencingConstants
 import com.raion.hunter.util.buildGeofence
 import com.raion.hunter.util.createChannel
 
-class FragmentMap : Fragment() {
+class FragmentMap : Fragment(), OnMapReadyCallback {
 
     private lateinit var binding: FragmentMapBinding
+
     private lateinit var viewModel: MapViewModel
     private lateinit var geofencingClient: GeofencingClient
     private lateinit var place: Place
     private lateinit var geofence: Geofence
+    private lateinit var map: GoogleMap
 
     private val deviceQLater = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q
 
@@ -68,6 +76,16 @@ class FragmentMap : Fragment() {
         geofencingClient = LocationServices.getGeofencingClient(requireActivity())
 
         createChannel(requireContext())
+
+        val mapFragment = childFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+        binding.backButtonMap.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.place = place
 
         return binding.root
     }
@@ -160,7 +178,7 @@ class FragmentMap : Fragment() {
     }
 
 
-    fun removeGeofences() {
+    private fun removeGeofences() {
         if (!foregroundAndBackgroundLocationPermissionApproved()) {
             return
         }
@@ -168,7 +186,6 @@ class FragmentMap : Fragment() {
         geofencingClient.removeGeofences(geofencePendingIntent).run {
             addOnSuccessListener {
                 Log.d(TAG, getString(R.string.geofences_removed))
-                Toast.makeText(requireContext(), R.string.geofences_removed, Toast.LENGTH_SHORT).show()
             }
 
             addOnFailureListener {
@@ -257,6 +274,38 @@ class FragmentMap : Fragment() {
     companion object {
         internal const val ACTION_GEOFENCE_EVENT =
             "MapFragment.hunter.action.ACTION_GEOFENCE_EVENT"
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        map = googleMap
+
+        val overlaySize = 100f
+        val zoomLevel = 18f
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(place.latLng, zoomLevel))
+        map.addMarker(MarkerOptions().position(place.latLng))
+
+//        val groundOverlay = GroundOverlayOptions()
+//            .image(BitmapDescriptorFactory.fromResource(R.drawable.android))
+//            .position(homeLatLng, overlaySize)
+
+//        map.addGroundOverlay(groundOverlay)
+        enableMyLocation()
+    }
+
+    private fun checkForegroundLocationPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            requireContext(),
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PermissionChecker.PERMISSION_GRANTED
+    }
+
+    private fun enableMyLocation() {
+        if (checkForegroundLocationPermission()) {
+            map.isMyLocationEnabled = true
+        } else {
+            requestPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION))
+        }
     }
 }
 

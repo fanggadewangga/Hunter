@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="place"
+            type="com.raion.hunter.dto.Place" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,11 +16,40 @@
         android:layout_height="match_parent"
         tools:context=".map.FragmentMap">
 
-        <!-- TODO: Update blank fragment layout -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/back_button_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_left"
+            android:backgroundTint="@color/orange"
+            app:tint="@color/white"
+            map:layout_constraintTop_toTopOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            android:importantForAccessibility="no"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            map:layout_constraintTop_toTopOf="@id/back_button_map"
+            map:layout_constraintBottom_toBottomOf="@+id/back_button_map"
+            map:layout_constraintStart_toEndOf="@id/back_button_map"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/plusjakartadisplay_bold"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            tools:text="Universitas Brawijaya"
+            android:text="@{place.name}"/>
+
+        <fragment
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
