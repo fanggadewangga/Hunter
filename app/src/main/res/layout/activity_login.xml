@@ -57,14 +57,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="48dp"
             android:layout_marginTop="8dp"
-            android:hint="Konfirmasi Password"
+            android:hint="Password"
             app:boxStrokeColor="@color/light_gray"
             app:endIconMode="password_toggle"
             app:hintTextColor="@color/light_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textinput_email"
-            app:placeholderText="Konfirmasi Password"
+            app:placeholderText="Password"
             app:placeholderTextAppearance="@style/body2"
             app:placeholderTextColor="@color/light_gray">
 

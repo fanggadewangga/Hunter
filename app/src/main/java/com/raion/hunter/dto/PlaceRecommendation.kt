@@ -3,7 +3,6 @@ package com.raion.hunter.dto
 import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.model.LatLng
 import com.raion.hunter.R
 
 data class PlaceRecommendation(

@@ -1,148 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".leaderboard.LeaderboardFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/iv_arrow_back_orange"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_leaderboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/plusjakartatext_bold"
-        android:text="Papan peringkat"
-        android:textColor="@color/orange"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/btn_back"
-        app:layout_constraintStart_toEndOf="@id/btn_back"
-        app:layout_constraintTop_toTopOf="@id/btn_back" />
-
-
-    <ImageView
-        android:id="@+id/iv_rank1"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/iv_rank1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_leaderboard" />
-
-    <TextView
-        android:id="@+id/tv_rank1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/plusjakartadisplay_medium"
-        android:text="Joko Santo"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_rank1"
-        app:layout_constraintStart_toStartOf="@id/iv_rank1"
-        app:layout_constraintTop_toBottomOf="@id/iv_rank1" />
-
-    <ImageView
-        android:id="@+id/iv_rank2"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/iv_rank2"
-        app:layout_constraintEnd_toStartOf="@id/iv_rank1"
-        app:layout_constraintTop_toTopOf="@id/iv_rank1" />
-
-    <TextView
-        android:id="@+id/tv_rank2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/plusjakartadisplay_medium"
-        android:text="Luhut"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_rank2"
-        app:layout_constraintStart_toStartOf="@id/iv_rank2"
-        app:layout_constraintTop_toBottomOf="@id/iv_rank2" />
-
-    <ImageView
-        android:id="@+id/iv_rank3"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/iv_rank3"
-        app:layout_constraintStart_toEndOf="@id/iv_rank1"
-        app:layout_constraintTop_toTopOf="@id/iv_rank1" />
-
-    <TextView
-        android:id="@+id/tv_rank3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/plusjakartadisplay_medium"
-        android:text="Luhut"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_rank3"
-        app:layout_constraintStart_toStartOf="@id/iv_rank3"
-        app:layout_constraintTop_toBottomOf="@id/iv_rank3" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/tv_user_rank"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blue"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="@id/tv_rank3"
-        app:layout_constraintStart_toStartOf="@id/tv_rank2"
-        app:layout_constraintTop_toBottomOf="@id/tv_rank1">
+        android:layout_height="match_parent"
+        tools:context=".leaderboard.LeaderboardFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|start"
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="24dp"
-            android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Peringkatmu"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:layout_marginTop="48dp"
+            android:src="@drawable/iv_arrow_back_orange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_leaderboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="@font/plusjakartatext_bold"
-            android:text="100"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_leaderboard"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_rank"
-        tools:listitem="@layout/item_leaderboard_layout"/>
+            android:text="Papan peringkat"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_back"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="@id/btn_back" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_rank1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/iv_rank1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_leaderboard" />
+
+        <TextView
+            android:id="@+id/tv_rank1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/plusjakartadisplay_medium"
+            android:text="Joko Santo"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_rank1"
+            app:layout_constraintStart_toStartOf="@id/iv_rank1"
+            app:layout_constraintTop_toBottomOf="@id/iv_rank1" />
+
+        <ImageView
+            android:id="@+id/iv_rank2"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/iv_rank2"
+            app:layout_constraintEnd_toStartOf="@id/iv_rank1"
+            app:layout_constraintTop_toTopOf="@id/iv_rank1" />
+
+        <TextView
+            android:id="@+id/tv_rank2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/plusjakartadisplay_medium"
+            android:text="Luhut"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_rank2"
+            app:layout_constraintStart_toStartOf="@id/iv_rank2"
+            app:layout_constraintTop_toBottomOf="@id/iv_rank2" />
+
+        <ImageView
+            android:id="@+id/iv_rank3"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/iv_rank3"
+            app:layout_constraintStart_toEndOf="@id/iv_rank1"
+            app:layout_constraintTop_toTopOf="@id/iv_rank1" />
+
+        <TextView
+            android:id="@+id/tv_rank3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/plusjakartadisplay_medium"
+            android:text="Luhut"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_rank3"
+            app:layout_constraintStart_toStartOf="@id/iv_rank3"
+            app:layout_constraintTop_toBottomOf="@id/iv_rank3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tv_user_rank"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="48dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/blue"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_rank3"
+            app:layout_constraintStart_toStartOf="@id/tv_rank2"
+            app:layout_constraintTop_toBottomOf="@id/tv_rank1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="Peringkatmu"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="100"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_leaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_rank"
+            tools:listitem="@layout/item_leaderboard_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

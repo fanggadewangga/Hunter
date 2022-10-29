@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="place"
             type="com.raion.hunter.dto.Place" />
@@ -26,9 +27,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@{place.image}"
-                tools:src="@drawable/iv_kampung_warna_warni"
-                android:scaleType="centerCrop"/>
+                tools:src="@drawable/iv_kampung_warna_warni" />
 
             <ImageView
                 android:id="@+id/iv_arrow_back"
@@ -72,12 +73,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="56dp"
                     android:fontFamily="@font/plusjakartatext_bold"
-                    tools:text="Kampung Warna Warni"
                     android:text="@{place.name}"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Kampung Warna Warni" />
 
 
                 <TextView
@@ -88,10 +89,10 @@
                     android:layout_marginHorizontal="32dp"
                     android:layout_marginTop="16dp"
                     android:text="@{place.description}"
-                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sit quam velit, morbi amet, neque. Non mattis porttitor ornare ac facilisi pulvinar. Facilisi congue pulvinar quis id viverra enim ut facilisis. "
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="@id/tv_location_name"
-                    app:layout_constraintTop_toBottomOf="@id/tv_location_name" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_location_name"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sit quam velit, morbi amet, neque. Non mattis porttitor ornare ac facilisi pulvinar. Facilisi congue pulvinar quis id viverra enim ut facilisis. " />
 
                 <TextView
                     android:id="@+id/tv_review"
@@ -108,18 +109,21 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal"
+                    android:layout_marginHorizontal="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintStart_toStartOf="@id/tv_review"
                     app:layout_constraintTop_toBottomOf="@id/tv_review" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/map_view"
                     android:layout_width="match_parent"
-                    android:layout_height="360dp"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="24dp"
                     android:src="@drawable/iv_map"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -129,13 +133,14 @@
                     android:id="@+id/visit_place_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="32dp"
                     android:text="Kunjungi Lokasi"
                     app:cornerRadius="18dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/map_view"
-                    android:layout_marginTop="18dp"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/map_view" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

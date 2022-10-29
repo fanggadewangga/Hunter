@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.raion.hunter.R
 import com.raion.hunter.databinding.FragmentLocationDetailBinding
+import com.raion.hunter.dto.DummyReview
 import com.raion.hunter.util.GeofencingConstants
 
 class LocationDetailFragment : Fragment() {
@@ -19,7 +20,7 @@ class LocationDetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentLocationDetailBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[LocationDetailViewModel::class.java]
 
@@ -34,6 +35,10 @@ class LocationDetailFragment : Fragment() {
         binding.visitPlaceDetail.setOnClickListener {
             findNavController().navigate(LocationDetailFragmentDirections.actionLocationDetailFragmentToNavigationMap(place.id))
         }
+
+       val adapter = ReviewAdapter()
+        adapter.submitList(DummyReview.getData(requireContext()))
+        binding.recyclerView.adapter = adapter
 
         return binding.root
     }
