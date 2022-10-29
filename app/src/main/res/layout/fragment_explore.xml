@@ -1,21 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".explore.ExploreFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="320dp"
+            android:background="@drawable/bg_rounded_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="@string/explore"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_chat"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_chat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_add_friend"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_add_friend"
+                app:layout_constraintEnd_toStartOf="@id/iv_chat"
+                app:layout_constraintTop_toTopOf="@id/iv_chat" />
+
+            <ImageView
+                android:id="@+id/iv_add_post"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_add_post"
+                app:layout_constraintEnd_toStartOf="@id/iv_add_friend"
+                app:layout_constraintTop_toTopOf="@id/iv_chat" />
+
+            <HorizontalScrollView
+                android:layout_width="380dp"
+                android:layout_height="88dp"
+                android:layout_marginStart="32dp"
+                android:scrollbars="none"
+                android:layout_marginBottom="72dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="360dp"
+                    android:layout_height="88dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_1" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_2" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_3" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_4" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_5" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_5" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_5" />
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="88dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/iv_story_5" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:src="@drawable/iv_post" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:src="@drawable/iv_post" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:src="@drawable/iv_post" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:src="@drawable/iv_post" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
