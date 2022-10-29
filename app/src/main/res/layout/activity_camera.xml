@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".camera.CameraActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:paddingStart="16dp">
+    <data>
 
+    </data>
 
-        <ImageView
-            android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
-            android:src="@drawable/iv_arrow_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/plusjakartatext_bold"
-            android:text="Redeem"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_back"
-            app:layout_constraintStart_toEndOf="@id/btn_back"
-            app:layout_constraintTop_toTopOf="@id/btn_back" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.budiyev.android.codescanner.CodeScannerView
-        android:id="@+id/viewFinder"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:autoFocusButtonColor="@color/orange"
-        app:autoFocusButtonVisible="true"
-        app:flashButtonColor="@color/orange"
-        app:frameAspectRatioHeight="1"
-        app:frameAspectRatioWidth="1"
-        app:frameCornersRadius="0dp"
-        app:frameCornersSize="50dp"
-        app:frameSize="0.75"
-        app:maskColor="#77000000" />
-</FrameLayout>
+        tools:context=".camera.CameraActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:paddingStart="16dp">
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="64dp"
+                android:src="@drawable/iv_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="Redeem"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_back"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="@id/btn_back" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:id="@+id/viewFinder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:autoFocusButtonColor="@color/orange"
+            app:autoFocusButtonVisible="true"
+            app:flashButtonColor="@color/orange"
+            app:frameAspectRatioHeight="1"
+            app:frameAspectRatioWidth="1"
+            app:frameCornersRadius="0dp"
+            app:frameCornersSize="50dp"
+            app:frameSize="0.75"
+            app:maskColor="#77000000" />
+    </FrameLayout>
+</layout>

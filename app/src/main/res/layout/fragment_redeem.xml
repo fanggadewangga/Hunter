@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="user"
-            type="com.raion.hunter.dto.User" />
+            name="viewmodel"
+            type="com.raion.hunter.redeem.RedeemViewmodel" />
     </data>
 
     <ScrollView
@@ -55,7 +55,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="72dp"
                 android:fontFamily="@font/plusjakartatext_bold"
-                android:text="@{user.coins}"
+                android:text="@{String.valueOf(viewmodel.user.coins)}"
                 android:textColor="@color/white"
                 android:textSize="36sp"
                 tools:text="500"
@@ -94,6 +94,7 @@
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
+                        android:onClick="@{() -> viewmodel.redeemCoin()}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -166,6 +167,7 @@
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
+                        android:onClick="@{() -> viewmodel.redeemCoin()}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
@@ -241,6 +243,7 @@
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
+                        android:onClick="@{() -> viewmodel.redeemCoin()}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -314,6 +317,7 @@
                         android:layout_width="72dp"
                         android:layout_height="match_parent"
                         android:background="@color/orange"
+                        android:onClick="@{() -> viewmodel.redeemCoin()}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

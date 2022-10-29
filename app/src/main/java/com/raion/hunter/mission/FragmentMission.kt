@@ -1,5 +1,6 @@
 package com.raion.hunter.mission
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.raion.hunter.R
+import com.raion.hunter.camera.CameraActivity
 import com.raion.hunter.databinding.FragmentHomepageBinding
 import com.raion.hunter.databinding.FragmentMissionBinding
 import com.raion.hunter.dto.DummyPlace
@@ -30,8 +32,13 @@ class FragmentMission : Fragment() {
         adapter.submitList(DummyPlace.getData(requireContext()).shuffled())
         binding.missionRecommendationRv.adapter = adapter
 
+        binding.missionContainer1.setOnClickListener {
+            findNavController().navigate(FragmentMissionDirections.actionNavigationMissionToLeaderboardFragment())
+        }
 
-
+        binding.missionContainer2.setOnClickListener {
+            activity?.startActivity(Intent(activity, CameraActivity::class.java))
+        }
 
         return binding.root
     }

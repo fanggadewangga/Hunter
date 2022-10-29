@@ -21,11 +21,13 @@ class LandingActivity : AppCompatActivity() {
             btnSignup.setOnClickListener {
                 val intentToSignup = Intent(this@LandingActivity, SignupActivity::class.java)
                 startActivity(intentToSignup)
+                finish()
             }
 
             btnLogin.setOnClickListener {
                 val intentToLogin = Intent(this@LandingActivity, LoginActivity::class.java)
                 startActivity(intentToLogin)
+                finish()
             }
         }
     }

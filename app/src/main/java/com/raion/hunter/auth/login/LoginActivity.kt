@@ -19,11 +19,13 @@ class LoginActivity : AppCompatActivity() {
             tvDaftar.setOnClickListener {
                 val intentToSignup = Intent(this@LoginActivity, SignupActivity::class.java)
                 startActivity(intentToSignup)
+                finish()
             }
 
             btnLogin.setOnClickListener {
                 val intentToOnboard = Intent(this@LoginActivity, SecondOnboardActivity::class.java)
                 startActivity(intentToOnboard)
+                finish()
             }
         }
     }

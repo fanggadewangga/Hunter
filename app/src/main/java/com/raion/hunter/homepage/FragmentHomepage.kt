@@ -22,7 +22,9 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
 import com.raion.hunter.BuildConfig
+import com.raion.hunter.MainActivity
 import com.raion.hunter.R
+import com.raion.hunter.data.UserRepository
 import com.raion.hunter.databinding.FragmentHomepageBinding
 import com.raion.hunter.dto.DummyPlace
 import java.util.*
@@ -34,6 +36,8 @@ class FragmentHomepage : Fragment() {
     private lateinit var viewModel: HomepageViewModel
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private val deviceQLater = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q
+
+    private lateinit var repository: UserRepository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +53,14 @@ class FragmentHomepage : Fragment() {
         adapter.submitList(DummyPlace.getData(requireContext()))
         binding.placeRecommendationRv.adapter = adapter
         binding.lifecycleOwner = this
+
+        (activity as MainActivity).user.observe(viewLifecycleOwner) {
+            binding.user = it
+        }
+
+        binding.exchangeButton.setOnClickListener {
+            findNavController().navigate(FragmentHomepageDirections.actionNavigationHomeToRedeemFragment())
+        }
 
         getLastLocation()
 

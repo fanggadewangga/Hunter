@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="viewmodel"
-            type="com.raion.hunter.homepage.HomepageViewModel" />
+            name="user"
+            type="com.raion.hunter.dto.User" />
     </data>
 
     <ScrollView
@@ -108,11 +108,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="150 Poin"
+                        android:text="@{String.format(`%d Poin`, user.coins)}"
                         android:textColor="@color/white"
                         style="@style/h5"
                         android:layout_below="@id/poin_title" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/exchange_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/orange"

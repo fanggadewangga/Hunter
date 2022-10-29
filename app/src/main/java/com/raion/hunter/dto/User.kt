@@ -9,5 +9,5 @@ data class User(
     @PrimaryKey(autoGenerate = true)
     val uid: Int?,
     val name: String,
-    val coins: Int,
+    var coins: Int = 0,
 )

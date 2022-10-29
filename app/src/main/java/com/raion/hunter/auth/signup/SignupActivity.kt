@@ -21,10 +21,12 @@ class SignupActivity : AppCompatActivity() {
             tvLogin.setOnClickListener {
                 val intentToLogin = Intent(this@SignupActivity, LoginActivity::class.java)
                 startActivity(intentToLogin)
+                finish()
             }
             btnGoogle.setOnClickListener {
                 val intentToCamera = Intent(this@SignupActivity, CameraActivity::class.java)
                 startActivity(intentToCamera)
+                finish()
             }
         }
     }
