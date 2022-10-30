@@ -45,18 +45,17 @@ class FragmentHomepage : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomepageBinding.inflate(layoutInflater)
-        viewModel = ViewModelProvider(this)[HomepageViewModel::class.java]
+        repository = UserRepository(requireActivity().application)
+        val factory = HomepageViewmodelFactory(repository)
+        viewModel = ViewModelProvider(this, factory)[HomepageViewModel::class.java]
+        binding.lifecycleOwner = this
+        binding.viewmodel = viewModel
 
         val adapter = PlaceRecommendationAdapter(PlaceRecommendationListener { placeId ->
             findNavController().navigate(FragmentHomepageDirections.actionNavigationHomeToLocationDetailFragment(placeId))
         })
         adapter.submitList(DummyPlace.getData(requireContext()))
         binding.placeRecommendationRv.adapter = adapter
-        binding.lifecycleOwner = this
-
-        (activity as MainActivity).user.observe(viewLifecycleOwner) {
-            binding.user = it
-        }
 
         binding.exchangeButton.setOnClickListener {
             findNavController().navigate(FragmentHomepageDirections.actionNavigationHomeToRedeemFragment())
@@ -65,6 +64,11 @@ class FragmentHomepage : Fragment() {
         getLastLocation()
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchUserData()
     }
 
     private fun getLastLocation() {

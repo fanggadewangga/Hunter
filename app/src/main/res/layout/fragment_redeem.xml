@@ -376,66 +376,66 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/bottomSheetRedeem"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bottomsheet_background"
-                    android:paddingStart="18dp"
-                    android:paddingTop="18dp"
-                    android:paddingEnd="18dp"
-                    android:visibility="gone"
-                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-                    <ImageView
-                        android:id="@+id/iv_selected_item"
-                        android:layout_width="125dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="32dp"
-                        android:src="@drawable/iv_hat"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tv_selected_item_name"
-                        style="@style/body1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Topi mafia"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="@id/iv_selected_item"
-                        app:layout_constraintStart_toStartOf="@id/iv_selected_item"
-                        app:layout_constraintTop_toBottomOf="@id/iv_selected_item" />
-
-                    <TextView
-                        android:id="@+id/tv_selected_item_point"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/plusjakartatext_bold"
-                        android:text="200 poin"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        app:layout_constraintEnd_toEndOf="@id/tv_selected_item_name"
-                        app:layout_constraintStart_toStartOf="@id/tv_selected_item_name"
-                        app:layout_constraintTop_toBottomOf="@id/tv_selected_item_name" />
-
-                    <androidx.constraintlayout.utils.widget.ImageFilterView
-                        android:id="@+id/btn_selected_item"
-                        android:layout_width="212dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="24dp"
-                        android:src="@drawable/iv_btn_redeem"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@id/tv_selected_item_point"
-                        app:layout_constraintStart_toStartOf="@id/tv_selected_item_point"
-                        app:layout_constraintTop_toBottomOf="@id/tv_selected_item_point" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomSheetRedeem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottomsheet_background"
+            android:paddingStart="18dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="18dp"
+            android:layout_gravity="center|bottom"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <ImageView
+                android:id="@+id/iv_selected_item"
+                android:layout_width="125dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/iv_hat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_selected_item_name"
+                style="@style/body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Topi mafia"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_selected_item"
+                app:layout_constraintStart_toStartOf="@id/iv_selected_item"
+                app:layout_constraintTop_toBottomOf="@id/iv_selected_item" />
+
+            <TextView
+                android:id="@+id/tv_selected_item_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartatext_bold"
+                android:text="200 poin"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_selected_item_name"
+                app:layout_constraintStart_toStartOf="@id/tv_selected_item_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_selected_item_name" />
+
+            <ImageView
+                android:id="@+id/btn_selected_item"
+                android:layout_width="212dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/iv_btn_redeem"
+                app:layout_constraintEnd_toEndOf="@id/tv_selected_item_point"
+                app:layout_constraintStart_toStartOf="@id/tv_selected_item_point"
+                app:layout_constraintTop_toBottomOf="@id/tv_selected_item_point" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

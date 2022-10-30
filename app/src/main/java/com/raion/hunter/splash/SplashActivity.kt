@@ -30,7 +30,8 @@ class SplashActivity : AppCompatActivity() {
 
 
             splashViewModel.getIsFirstTime().observe(this@SplashActivity) { isFirstTime ->
-                if (isFirstTime) {
+                Log.d("SPLASH", isFirstTime.toString())
+                if (!isFirstTime) {
                     lifecycleScope.launch(Dispatchers.IO) {
                         userRepository.insertUser(User(null, "Gabriel", 5000))
                     }

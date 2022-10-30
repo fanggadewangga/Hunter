@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="user"
-            type="com.raion.hunter.dto.User" />
+            name="viewmodel"
+            type="com.raion.hunter.homepage.HomepageViewModel" />
     </data>
 
     <ScrollView
@@ -44,8 +44,10 @@
 
             <TextView
                 android:id="@+id/location_text"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/location_caption"
                 android:textColor="@color/black"
@@ -108,7 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="150 Poin"
-                        android:text="@{String.format(`%d Poin`, user.coins)}"
+                        android:text="@{String.format(`%d Poin`, viewmodel.user.coins)}"
                         android:textColor="@color/white"
                         style="@style/h5"
                         android:layout_below="@id/poin_title" />
